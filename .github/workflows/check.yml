@@ -10,4 +10,4 @@ jobs:
           uses: actions/checkout@v4
         - name: Check HTML
           run: npx --yes htmlhint
-          continue-on-error: true
+          continue-on-error: false
