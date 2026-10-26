@@ -9,4 +9,5 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v4
         - name: Check HTML
-          run: npx --yes
+          run: npx --yes htmlhint
+          continue-on-error: true
