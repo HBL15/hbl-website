@@ -2,9 +2,17 @@ name: Lab CI
 
 on: [push, workflow_dispatch]
 
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Confirm the runner works
-        run: echo "Pipeline is running"
+      - name: Download repository files
+        uses: actions/checkout@v6
+
+      - name: Check homepage greeting
+        run: |
+          grep -Fq "Welcome to Houston Barber Life" index.html
+          echo "Homepage greeting check passed"
